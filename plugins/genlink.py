@@ -46,10 +46,10 @@ async def gen_link_s(bot, message):
 @Client.on_message(filters.command(['batch', 'pbatch']))
 async def gen_link_batch(bot, message):
     if " " not in message.text:
-        return await message.reply("Use correct format.\nExample /batch https://t.me/vj_botz/10 https://t.me/vj_botz/20.")
+        return await message.reply("Use correct format.\nExample /batch https://t.me/DK_X_BOT/10 https://t.me/DK_X_BOT/20.")
     links = message.text.strip().split(" ")
     if len(links) != 3:
-        return await message.reply("Use correct format.\nExample /batch https://t.me/vj_botz/10 https://t.me/vj_botz/20.")
+        return await message.reply("Use correct format.\nExample /batch https://t.me/DK_X_BOT/10 https://t.me/DK_X_BOT/20.")
     cmd, first, last = links
     regex = re.compile("(https://)?(t\.me/|telegram\.me/|telegram\.dog/)(c/)?(\d+|[a-zA-Z_0-9]+)/(\d+)$")
     match = regex.match(first)
@@ -75,7 +75,7 @@ async def gen_link_batch(bot, message):
     try:
         chat_id = (await bot.get_chat(f_chat_id)).id
     except ChannelInvalid:
-        return await message.reply('@what_if_dubb_bot This may be a private channel / group. Make me an admin over there to index the files.')
+        return await message.reply('@DK_X_BOT This may be a private channel / group. Make me an admin over there to index the files.')
     except (UsernameInvalid, UsernameNotModified):
         return await message.reply('Invalid Link specified.')
     except Exception as e:
