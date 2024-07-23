@@ -48,8 +48,6 @@ async def start(client, message):
         await db.add_user(message.from_user.id, message.from_user.first_name)
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@sastamarvel01?si=JmIkr6a16LRXUaIe')
-            ],[
             InlineKeyboardButton('🤖 ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ', url=f'https://t.me/{BOT_USERNAME}?start=clone')
             ],[
             InlineKeyboardButton('💁‍♀️ ʜᴇʟᴘ', callback_data='help'),
@@ -92,10 +90,10 @@ async def start(client, message):
                 except:
                     return
             await msg.edit_caption(f_caption)
-            k = await msg.reply(f"<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>{AUTO_DELETE} mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there you want again [Get Here](https://t.me/aapna_Movies) </i></b>",quote=True)
+            k = await msg.reply(f"<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis File/Video will be deleted in <b><u>{AUTO_DELETE} mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there </i></b>",quote=True)
             await asyncio.sleep(AUTO_DELETE_TIME)
             await msg.delete()
-            await k.edit_text("<b>Your File/Video is successfully deleted!!! you want again [Get Here](https://t.me/aapna_Movies) </b>")
+            await k.edit_text("<b>Your File/Video is successfully deleted!!! </b>")
 
             return
         except:
@@ -138,9 +136,6 @@ async def shortener_api_handler(client, m: Message):
     else:
         await m.reply("You are not authorized to use this command.")
 
-# Don't Remove Credit Tg - @Avatar_last_airbender_3_hindi
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@sastamarvel01?si=JmIkr6a16LRXUaIe
-# Ask Doubt on telegram @hero_botss
 
 @Client.on_message(filters.command("base_site") & filters.private)
 async def base_site_handler(client, m: Message):
@@ -160,10 +155,6 @@ async def base_site_handler(client, m: Message):
     else:
         await m.reply("You are not authorized to use this command.")
 
-# Don't Remove Credit Tg - @Avatar_last_airbender_3_hindi
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@sastamarvel01?si=JmIkr6a16LRXUaIe
-# Ask Doubt on telegram @hero_botss
-
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
@@ -171,8 +162,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.delete()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@sastamarvel01?si=JmIkr6a16LRXUaIe')
-            ],[
             InlineKeyboardButton('🤖 ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ', url=f'https://t.me/{BOT_USERNAME}?start=clone')
             ],[
             InlineKeyboardButton('💁‍♀️ ʜᴇʟᴘ', callback_data='help'),
